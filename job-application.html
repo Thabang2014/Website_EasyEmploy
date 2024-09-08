@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -97,17 +96,20 @@
 
 
 <body>
+        <header>
+		 <div class="jumbo text-center">
+            <h1>Join Our Team at EasyEmploy</h1>
+        		<p>We are excited to offer you an opportunity to join our innovative and diverse team at EasyEmploy. Apply today and help us revolutionize the hiring process!</p>
+				                <h2>Application Form</h2>
+        </div>
+		</header>
     <div class="container">
         <!-- Introduction Section -->
-        <header>
-            <h1>Join Our Team at EasyEmploy</h1>
-            <p>We are excited to offer you an opportunity to join our innovative and diverse team at EasyEmploy. Apply today and help us revolutionize the hiring process!</p>
-        </header>
 
         <!-- Application Form -->
         <div class="form-container">
             <form id="jobApplicationForm">
-                <h2>Application Form</h2>
+
 
                 <!-- Personal Information Section -->
                 <section>
@@ -178,6 +180,7 @@
                         <select id="educationLevel" name="educationLevel" required>
                             <option value="" disabled selected>Select</option>
                             <option value="highSchool">High School</option>
+                            <option value="highSchool">National Diploma</option>
                             <option value="bachelor">Bachelor's Degree</option>
                             <option value="bachelor">Honors Degree</option>
                             <option value="master">Master's Degree</option>
@@ -240,7 +243,7 @@
                     </div>
                     <div class="form-group">
                         <label for="languages">Languages Spoken:</label>
-                        <input type="text" id="languages" name="languages" placeholder="e.g., English, Spanish, French" required>
+                        <input type="text" id="languages" name="languages" placeholder="e.g., English, Setswana, Afrikaans" required>
                     </div>
                     <div class="form-group">
                         <label for="portfolio">Portfolio Link (if applicable):</label>
@@ -266,6 +269,17 @@
                             <option value="internship">Internship</option>
                         </select>
                     </div>
+					
+					   <div class="form-group">
+                        <label for="workType">Preferred Work Mode:</label>
+                        <select id="workType" name="workType" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="fullTime">Onsite</option>
+                            <option value="partTime">Hybrid</option>
+                            <option value="partTime">Remote</option>
+						</select>
+						</div>
+					
                     <div class="form-group">
                         <label for="locationPreference">Location Preference:</label>
                         <input type="text" id="locationPreference" name="locationPreference" placeholder="City or region preference">
@@ -313,19 +327,13 @@
                         <input type="text" id="referenceRelation2" name="referenceRelation2">
                     </div>
 
-
-  <div class="form-group">
-    <label for="other-documents">Upload ID Document:</label>
-    <input type="file" id="other-documents" name="other-documents" accept=".pdf,.doc,.docx,.jpg,.png" multiple>
-  </div>
-
   <div class="form-group">
     <label for="cv">Upload CV:</label>
     <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
   </div>
   
   <div class="form-group">
-    <label for="other-documents">Upload Supporting Documents:</label>
+    <label for="other-documents">Upload Documents:</label>
     <input type="file" id="other-documents" name="other-documents" accept=".pdf,.doc,.docx,.jpg,.png" multiple>
   </div>
 
@@ -369,8 +377,7 @@
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/stickyfill.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    
+    <script src="js/jquery.easing.1.3.js"></script>   
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -383,4 +390,6 @@
 
 
 </body>
+
+
 </html>

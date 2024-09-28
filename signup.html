@@ -1,293 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>EasyEmploy &mdash; Sign Up</title>
-    
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/quill.snow.css">
-    <link rel="stylesheet" href="css/style.css">    
-  </head>
-  <body id="top">
-
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
-
-  <div class="site-wrap">
-    <!-- NAVBAR -->
-    <header class="site-navbar mt-3">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="index.html">EasyEmploy</a></div>
-          <nav class="mx-auto site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li class="has-children">
-                <a href="job-listings.html">Job Listings</a>
-                <ul class="dropdown">
-                  <li><a href="job-single.html">Job Single</a></li>
-                  <li><a href="post-job.html">Post a Job</a></li>
-                </ul>
-              </li>
-              <li class="has-children">
-                <a href="services.html">Pages</a>
-                <ul class="dropdown">
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="service-single.html">Service Single</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>
-                  <li><a href="portfolio.html">Portfolio</a></li>
-                  <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                  <li><a href="testimonials.html">Testimonials</a></li>
-                  <li><a href="faq.html">Frequently Ask Questions</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-              </li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li class="d-lg-none"><a href="signup.html"><span class="mr-2">+</span> SignUp Here</a></li>
-              <li class="d-lg-none"><a href="signup.html">Sign Up</a></li>
-            </ul>
-          </nav>
-          <div class="right-cta-menu text-right d-flex align-items-center col-6">
-            <div class="ml-auto">
-              <a href="signup.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>SignUp Here</a>
-              <a href="login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
-            </div>
-            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/image24.png');" id="home-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">Sign Up</h1>
-            <div class="custom-breadcrumbs">
-              <a href="#">Home</a> <span class="mx-2 slash">/</span>
-              <span class="text-white"><strong>Sign Up</strong></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SIGNUP FORM WITH DROPDOWN -->
+    <title>EasyEmploy — Sign Up</title>
+    <link rel="stylesheet" href="we/style.css">
+    <!-- Include Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-storage.js"></script>
+</head>
+<body>
     <section class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-lg-6 mb-5 mx-auto">
-            <h2 class="mb-4 text-center">Sign Up</h2>
-            <form action="#" method="POST" class="p-4 border rounded">
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="userType">I want to sign up as:</label>
-                  <select class="form-control" id="userType" name="userType" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="job-seeker">Job-Seeker</option>
-                    <option value="employer">Employer</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- JOB-SEEKER SIGNUP FORM -->
-              <div id="jobSeekerForm" class="signup-form" style="display: none;">
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="resume">Upload Resume (Optional)</label>
-                    <input type="file" class="form-control-file" id="resume" name="resume">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
-                      <label class="form-check-label" for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h2>EasyEmploy Sign Up</h2>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-
-              <!-- EMPLOYER SIGNUP FORM -->
-              <div id="employerForm" class="signup-form" style="display: none;">
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="companyName">Company Name</label>
-                    <input type="text" class="form-control" id="companyName" name="companyName">
-                  </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <form class="p-4 p-md-5 border rounded" id="signupForm">
+                        <h3 class="text-black mb-5 border-bottom pb-2">Create Your Account</h3>
+                        
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="you@yourdomain.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password" required>
+                        </div>
+                        
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-primary btn-md text-white" value="Sign Up">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="contactName">Contact Name</label>
-                    <input type="text" class="form-control" id="contactName" name="contactName">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <label for="companyLogo">Upload Company Logo (Optional)</label>
-                    <input type="file" class="form-control-file" id="companyLogo" name="companyLogo">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-12">
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
-                      <label class="form-check-label" for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn-primary">Sign Up</button>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>About Us</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Support</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Contact Us</h3>
-            <div class="footer-social">
-              <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
-              <a href="#"><span class="icon-instagram"></span></a>
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-12">
-            <p class="copyright"><small>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Website is made by Thabang Morulana</small></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- SCRIPTS -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/isotope.pkgd.min.js"></script>
-  <script src="js/stickyfill.min.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/quill.min.js"></script>
-  <script src="js/bootstrap-select.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script>
-    document.getElementById('userType').addEventListener('change', function() {
-      var value = this.value;
-      if (value === 'job-seeker') {
-        document.getElementById('jobSeekerForm').style.display = 'block';
-        document.getElementById('employerForm').style.display = 'none';
-      } else if (value === 'employer') {
-        document.getElementById('employerForm').style.display = 'block';
-        document.getElementById('jobSeekerForm').style.display = 'none';
-      } else {
-        document.getElementById('jobSeekerForm').style.display = 'none';
-        document.getElementById('employerForm').style.display = 'none';
-      }
-    });
-  </script>
-   
-  </body>
+    <!-- Link to your JavaScript files -->
+    <script src="we/app.js" type="module"></script>
+    <script src="we/signup.js" type="module"></script>
+</body>
 </html>

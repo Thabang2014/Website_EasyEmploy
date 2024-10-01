@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -271,8 +272,8 @@
                     </div>
 					
 					   <div class="form-group">
-                        <label for="workType">Preferred Work Mode:</label>
-                        <select id="workType" name="workType" required>
+                        <label for="workMode">Preferred Work Mode:</label>
+                        <select id="workMode" name="workMode" required>
                             <option value="" disabled selected>Select</option>
                             <option value="fullTime">Onsite</option>
                             <option value="partTime">Hybrid</option>
@@ -285,47 +286,12 @@
                         <input type="text" id="locationPreference" name="locationPreference" placeholder="City or region preference">
                     </div>
                 </section>
-
-                <!-- Motivational Questions Section -->
-                <section>
-                    <h3>Motivational Questions</h3>
-                    <div class="form-group">
-                        <label for="motivation">Why do you want to work at EasyEmploy?</label>
-                        <textarea id="motivation" name="motivation" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="challenges">Describe a professional challenge you overcame:</label>
-                        <textarea id="challenges" name="challenges" required></textarea>
-                    </div>
-                </section>
-
-                <!-- References Section -->
-                <section>
-                    <h3>References</h3>
-                    <div class="form-group">
-                        <label for="referenceName1">Reference Name:</label>
-                        <input type="text" id="referenceName1" name="referenceName1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="referenceContact1">Reference Contact:</label>
-                        <input type="text" id="referenceContact1" name="referenceContact1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="referenceRelation1">Relation to Reference:</label>
-                        <input type="text" id="referenceRelation1" name="referenceRelation1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="referenceName2">Reference Name:</label>
-                        <input type="text" id="referenceName2" name="referenceName2">
-                    </div>
-                    <div class="form-group">
-                        <label for="referenceContact2">Reference Contact:</label>
-                        <input type="text" id="referenceContact2" name="referenceContact2">
-                    </div>
-                    <div class="form-group">
-                        <label for="referenceRelation2">Relation to Reference:</label>
-                        <input type="text" id="referenceRelation2" name="referenceRelation2">
-                    </div>
+                
+                <section>                
+                   <div class="form-group">
+                    <label for="identity">Upload ID:</label>
+                     <input type="file" id="identity" name="identity" accept=".pdf,.doc,.docx" required>
+                  </div>
 
   <div class="form-group">
     <label for="cv">Upload CV:</label>
@@ -333,14 +299,9 @@
   </div>
   
   <div class="form-group">
-    <label for="other-documents">Upload Documents:</label>
+    <label for="other-documents">Upload Supporting  Documents:</label>
     <input type="file" id="other-documents" name="other-documents" accept=".pdf,.doc,.docx,.jpg,.png" multiple>
   </div>
-
-  
- 
-
-
 
                 </section>
 
@@ -365,9 +326,6 @@
             </form>
         </div>
     </div>
-
-
-   
   
   </div>
 
@@ -387,7 +345,7 @@
     <script src="js/bootstrap-select.min.js"></script>
     
     <script src="js/custom.js"></script>
-
+    <script type="module" src="job-application.js"></script>
 
 </body>
 

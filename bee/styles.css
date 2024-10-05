@@ -1,0 +1,132 @@
+/* General Form Styling */
+form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+h2, h3 {
+  color: #333;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="file"], select, textarea, .editor {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus, textarea:focus, .editor:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+button[type="submit"], .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover, .btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-light:hover {
+  background-color: #e2e6ea;
+}
+
+.selectpicker {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.selectpicker:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.editor {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 100px;
+  background-color: #fff;
+}
+
+.editor:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  form {
+      padding: 20px;
+  }
+
+  input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="file"], select, textarea, .editor {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  button[type="submit"], .btn {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+}
